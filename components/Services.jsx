@@ -34,7 +34,7 @@ const Services = () => {
           My Services
         </h2>
         {/* Grid Items */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center gap-y-12 lg:gap-y-24 md:gap-x-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center gap-y-20 lg:gap-x-8">
           {servicesData &&
             servicesData.map((item, key) => (
               <Card

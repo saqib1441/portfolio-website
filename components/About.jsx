@@ -95,15 +95,17 @@ const skillData = [
   {
     title: "skills",
     data: [
-      {
-        name: "HTML, CSS, JavaScript",
-      },
-      {
-        name: "React JS, Tailwind CSS, Next JS",
-      },
-      {
-        name: "Node JS, Express, MongoDB, Mongoose",
-      },
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React JS",
+      "Tailwind CSS",
+      "Next JS",
+      "Node JS",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "React Native",
     ],
   },
 ];
@@ -113,7 +115,7 @@ const About = () => {
     return arr.find((item) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px] py-12 lg:py-24 mb-20 lg:mb-16">
+    <section className="xl:h-[860px] py-12 lg:py-24">
       <div className="container mx-auto">
         <h2 className="section-title mb-8 lg:mb-16 text-center mx-auto">
           About me
@@ -159,13 +161,13 @@ const About = () => {
                     </p>
 
                     {/* Icons */}
-                    <div className="grid lg:grid-cols-2 gap-4 mb-12">
+                    <div className="grid lg:grid-cols-2 gap-4 mb-12 lg:gap-x-14 xl:gap-x-0">
                       {infoData &&
                         infoData.map((info, key) => {
                           return (
                             <div
                               key={key}
-                              className="flex items-center gap-x-4 mx-auto lg:mx-0"
+                              className="flex items-center gap-x-2 mx-auto lg:mx-0"
                             >
                               <div className="text-primary">{info.icon}</div>
                               <div>{info.text}</div>
@@ -273,17 +275,9 @@ const About = () => {
                       <h4 className="text-xl font-semibold mb-2">Skill</h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* Skills list */}
-                      <div>
+                      <div className="grid grid-cols-3">
                         {getData(skillData, "skills").data.map((skill, key) => {
-                          const { name } = skill;
-                          return (
-                            <div
-                              key={key}
-                              className="w-2/4 text-center lg:text-left mx-auto lg:mx-0"
-                            >
-                              <div className="font-medium">{name}</div>
-                            </div>
-                          );
+                          return <div key={key}>{skill}</div>;
                         })}
                       </div>
                     </div>
